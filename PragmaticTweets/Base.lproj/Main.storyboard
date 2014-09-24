@@ -27,7 +27,7 @@
                                 </connections>
                             </button>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fFO-9f-OEV">
-                                <rect key="frame" x="16" y="96" width="568" height="496"/>
+                                <rect key="frame" x="0.0" y="96" width="600" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0l-vs-yu4">
@@ -44,11 +44,11 @@
                         <constraints>
                             <constraint firstItem="c0l-vs-yu4" firstAttribute="top" secondItem="Cq1-n5-M8y" secondAttribute="bottom" constant="8" id="5st-Kt-96n"/>
                             <constraint firstItem="Cq1-n5-M8y" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="70l-NQ-3Hy"/>
+                            <constraint firstItem="fFO-9f-OEV" firstAttribute="top" secondItem="c0l-vs-yu4" secondAttribute="bottom" constant="8" symbolic="YES" id="90E-PZ-MQg"/>
                             <constraint firstAttribute="centerX" secondItem="c0l-vs-yu4" secondAttribute="centerX" id="ATy-rZ-BOP"/>
-                            <constraint firstItem="fFO-9f-OEV" firstAttribute="top" secondItem="c0l-vs-yu4" secondAttribute="bottom" constant="8" id="fzb-Ot-B5W"/>
-                            <constraint firstItem="fFO-9f-OEV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="lpI-70-acw"/>
-                            <constraint firstItem="fFO-9f-OEV" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ucA-LJ-5vy"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fFO-9f-OEV" secondAttribute="bottom" constant="8" symbolic="YES" id="uep-UV-Q8Q"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fFO-9f-OEV" secondAttribute="bottom" id="Bsh-vr-6wz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fFO-9f-OEV" secondAttribute="trailing" constant="-16" id="ICc-RI-1gR"/>
+                            <constraint firstItem="fFO-9f-OEV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="VQt-xW-TJh"/>
                             <constraint firstAttribute="centerX" secondItem="Cq1-n5-M8y" secondAttribute="centerX" id="wLV-sP-Hh6"/>
                         </constraints>
                     </view>
