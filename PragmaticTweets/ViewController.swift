@@ -9,20 +9,14 @@
 import UIKit
 import Social
 
-class ViewController: UIViewController {
+public class ViewController: UIViewController {
 
-    @IBOutlet weak var twitterWebView: UIWebView!
+    @IBOutlet public weak var twitterWebView: UIWebView!
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.reloadTweets()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
     @IBAction func handleTweetButtonTapped(sender: UIButton) {
         if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
@@ -36,6 +30,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction func handleShowMyTweetsButtonTapped(sender: UIButton) {
+        self.reloadTweets()
+    }
+
+    func reloadTweets() {
         let url = NSURL(string: "https://twitter.com/mathie")
         let urlRequest = NSURLRequest(URL: url)
         self.twitterWebView.loadRequest(urlRequest)
