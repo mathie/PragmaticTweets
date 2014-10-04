@@ -22,6 +22,10 @@ public class ViewController: UITableViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         reloadTweets()
+        
+        var refresher = UIRefreshControl()
+        refresher.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl = refresher
     }
 
     public override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -58,6 +62,14 @@ public class ViewController: UITableViewController {
         }
     }
 
+    @IBAction func handleRefresh(sender : AnyObject?) {
+        self.parsedTweets.append(
+            ParsedTweet(tweetText: "New row", userName: "@refresh", createdAt: NSDate().description, userAvatarURL: defaultAvatarURL)
+        )
+        reloadTweets()
+        refreshControl!.endRefreshing()
+    }
+    
     func reloadTweets() {
         self.tableView.reloadData()
     }
