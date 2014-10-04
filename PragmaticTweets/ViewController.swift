@@ -8,6 +8,7 @@
 
 import UIKit
 import Social
+import Accounts
 
 let defaultAvatarURL = NSURL(string: "https://abs.twimg.com/sticky/default_profile_images/default_profile_0_200x200.png")
 
@@ -71,7 +72,43 @@ public class ViewController: UITableViewController {
     }
     
     func reloadTweets() {
+        let accountStore = ACAccountStore()
+        let twitterAccountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
+        let twitterAccounts = accountStore.accountsWithAccountType(twitterAccountType)
+        if(twitterAccounts.count == 0) {
+            println("No twitter accounts configured.")
+            return
+        }
+
+        accountStore.requestAccessToAccountsWithType(twitterAccountType, options: nil, completion: {
+            (Bool granted, NSError error) -> Void in
+            if(!granted) {
+                println("Account access not granted.")
+            } else {
+                println("Account access granted.")
+                
+                let twitterParams = [
+                    "count": "100"
+                ]
+                let twitterAPIURL = NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
+                let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: twitterAPIURL, parameters: twitterParams)
+                request.account = twitterAccounts[0] as ACAccount
+                request.performRequestWithHandler({
+                    (NSData data, NSHTTPURLResponse urlResponse, NSError error) -> Void in
+                    self.handleTwitterData(data, urlResponse: urlResponse, error: error)
+                })
+            }
+        })
+
         self.tableView.reloadData()
+    }
+
+    func handleTwitterData(data: NSData!, urlResponse: NSURLResponse!, error: NSError!) {
+        if let validData = data {
+            println("Valid twitter data: \(validData.length)")
+        } else {
+            println("handleTwitterData received no data.")
+        }
     }
 }
 
