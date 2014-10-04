@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4BC63CFB19E0098D00BC31F0 /* ParsedTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC63CFA19E0098D00BC31F0 /* ParsedTweet.swift */; };
+		4BC63CFD19E0124400BC31F0 /* ParsedTweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC63CFC19E0124400BC31F0 /* ParsedTweetCell.swift */; };
 		4BE23BD919D3096B00FE88C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE23BD819D3096B00FE88C9 /* AppDelegate.swift */; };
 		4BE23BDB19D3096B00FE88C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE23BDA19D3096B00FE88C9 /* ViewController.swift */; };
 		4BE23BDE19D3096B00FE88C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BE23BDC19D3096B00FE88C9 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		4BC63CFA19E0098D00BC31F0 /* ParsedTweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedTweet.swift; sourceTree = "<group>"; };
+		4BC63CFC19E0124400BC31F0 /* ParsedTweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedTweetCell.swift; sourceTree = "<group>"; };
 		4BE23BD319D3096B00FE88C9 /* PragmaticTweets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PragmaticTweets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BE23BD719D3096B00FE88C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BE23BD819D3096B00FE88C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				4BE23BDF19D3096B00FE88C9 /* Images.xcassets */,
 				4BE23BE119D3096B00FE88C9 /* LaunchScreen.xib */,
 				4BE23BD619D3096B00FE88C9 /* Supporting Files */,
+				4BC63CFC19E0124400BC31F0 /* ParsedTweetCell.swift */,
 			);
 			path = PragmaticTweets;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BC63CFD19E0124400BC31F0 /* ParsedTweetCell.swift in Sources */,
 				4BC63CFB19E0098D00BC31F0 /* ParsedTweet.swift in Sources */,
 				4BE23BDB19D3096B00FE88C9 /* ViewController.swift in Sources */,
 				4BE23BD919D3096B00FE88C9 /* AppDelegate.swift in Sources */,
