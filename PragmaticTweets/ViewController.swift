@@ -19,6 +19,11 @@ public class ViewController: UITableViewController {
         ParsedTweet(tweetText: "Anime is cool", userName: "@invalidname", createdAt: "2014-07-31 16:44:30 EDT", userAvatarURL: defaultAvatarURL)
     ]
 
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        reloadTweets()
+    }
+
     public override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -28,9 +33,10 @@ public class ViewController: UITableViewController {
     }
 
     public override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)!
+        let cell = tableView.dequeueReusableCellWithIdentifier("UserAndTweetCell") as UITableViewCell
         let parsedTweet = parsedTweets[indexPath.row]
-        cell.textLabel!.text = parsedTweet.tweetText
+        cell.textLabel!.text = parsedTweet.userName
+        cell.detailTextLabel!.text = parsedTweet.tweetText
         
         return cell
     }
@@ -44,6 +50,10 @@ public class ViewController: UITableViewController {
         } else {
             println("Can't send tweet")
         }
+    }
+
+    func reloadTweets() {
+        self.tableView.reloadData()
     }
 }
 
