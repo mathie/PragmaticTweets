@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, TwitterAPIRequestDelegate {
 
     var window: UIWindow?
 
@@ -30,7 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        let request = TwitterAPIRequest()
+        println("applicationWillEnterForeground")
+        request.sendTwitterRequest(NSURL(string: "https://api.twitter.com/1.1/users/suggestions.json"), params: [ : ], delegate: self)
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
@@ -41,6 +43,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func handleTwitterData(data: NSData!, urlResponse: NSHTTPURLResponse!, error: NSError!, fromRequest: TwitterAPIRequest!) {
+        if let validData = data {
+            var parseError : NSError? = nil
+            let jsonObject : AnyObject? = NSJSONSerialization.JSONObjectWithData(validData, options: NSJSONReadingOptions(0), error: &parseError)
+            println("Suggestions JSON: \(jsonObject)")
+         } else {
+            println("handleTwitterData received no data.")
+        }
+    }
 
 }
 
