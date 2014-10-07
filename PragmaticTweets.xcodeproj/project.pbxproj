@@ -67,6 +67,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4BC63CFE19E43FCF00BC31F0 /* Root View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4BE23BDA19D3096B00FE88C9 /* RootViewController.swift */,
+				4BC63CFC19E0124400BC31F0 /* ParsedTweetCell.swift */,
+			);
+			name = "Root View Controller";
+			sourceTree = "<group>";
+		};
+		4BC63CFF19E4400D00BC31F0 /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				4BC63CFA19E0098D00BC31F0 /* ParsedTweet.swift */,
+			);
+			name = Twitter;
+			sourceTree = "<group>";
+		};
 		4BE23BCA19D3096B00FE88C9 = {
 			isa = PBXGroup;
 			children = (
@@ -89,14 +106,11 @@
 			isa = PBXGroup;
 			children = (
 				4BE23BD819D3096B00FE88C9 /* AppDelegate.swift */,
-				4BE23BDA19D3096B00FE88C9 /* RootViewController.swift */,
-				4BE23BFE19D3259200FE88C9 /* Localizable.strings */,
+				4BC63CFE19E43FCF00BC31F0 /* Root View Controller */,
+				4BC63CFF19E4400D00BC31F0 /* Twitter */,
 				4BE23BDC19D3096B00FE88C9 /* Main.storyboard */,
-				4BC63CFA19E0098D00BC31F0 /* ParsedTweet.swift */,
 				4BE23BDF19D3096B00FE88C9 /* Images.xcassets */,
-				4BE23BE119D3096B00FE88C9 /* LaunchScreen.xib */,
 				4BE23BD619D3096B00FE88C9 /* Supporting Files */,
-				4BC63CFC19E0124400BC31F0 /* ParsedTweetCell.swift */,
 			);
 			path = PragmaticTweets;
 			sourceTree = "<group>";
@@ -104,6 +118,8 @@
 		4BE23BD619D3096B00FE88C9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4BE23BE119D3096B00FE88C9 /* LaunchScreen.xib */,
+				4BE23BFE19D3259200FE88C9 /* Localizable.strings */,
 				4BE23BD719D3096B00FE88C9 /* Info.plist */,
 			);
 			name = "Supporting Files";
