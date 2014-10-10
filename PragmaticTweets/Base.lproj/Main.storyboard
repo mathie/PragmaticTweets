@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Tweets-->
         <scene sceneID="ifi-YG-9bm">
             <objects>
                 <tableViewController id="pnn-OL-TOH" customClass="RootViewController" customModule="PragmaticTweets" customModuleProvider="target" sceneMemberID="viewController">
@@ -106,7 +106,13 @@
                             <outlet property="delegate" destination="pnn-OL-TOH" id="rWK-xU-Tjv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="v20-uL-VUI"/>
+                    <navigationItem key="navigationItem" title="Tweets" id="v20-uL-VUI">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="Gs0-as-W0a">
+                            <connections>
+                                <action selector="handleTweetButtonTapped:" destination="pnn-OL-TOH" id="EGc-WL-Gf7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LrO-Dd-wV7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
