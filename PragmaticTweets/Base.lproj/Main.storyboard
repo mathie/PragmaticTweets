@@ -130,9 +130,72 @@
                     <view key="view" contentMode="scaleToFill" id="auk-1u-53z">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Real Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdX-M6-hgd">
+                                <rect key="frame" x="88" y="72" width="516" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vzg-AJ-if1">
+                                <rect key="frame" x="88" y="92" width="476" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet Text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ZZ-wQ-bx3">
+                                <rect key="frame" x="36" y="140" width="528" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HqB-Q0-kmc">
+                                <rect key="frame" x="36" y="168" width="528" height="412"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZM-q9-3uo">
+                                <rect key="frame" x="20" y="72" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="H1C-PK-MMW"/>
+                                    <constraint firstAttribute="width" constant="60" id="eED-Rk-6mM"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="HqB-Q0-kmc" secondAttribute="bottom" constant="20" id="3K0-Us-zzu"/>
+                            <constraint firstItem="Vzg-AJ-if1" firstAttribute="leading" secondItem="pZM-q9-3uo" secondAttribute="trailing" constant="8" id="5T1-4H-P2n"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vzg-AJ-if1" secondAttribute="trailing" constant="20" id="6Y5-zS-cBv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5ZZ-wQ-bx3" secondAttribute="trailing" constant="20" id="88L-Ac-Mzv"/>
+                            <constraint firstItem="HqB-Q0-kmc" firstAttribute="leading" secondItem="auk-1u-53z" secondAttribute="leadingMargin" constant="20" id="8Vh-Rj-3RU"/>
+                            <constraint firstItem="Vzg-AJ-if1" firstAttribute="top" secondItem="Kid-yR-ZV4" secondAttribute="bottom" constant="28" id="BMF-52-MSN"/>
+                            <constraint firstItem="gdX-M6-hgd" firstAttribute="top" secondItem="Kid-yR-ZV4" secondAttribute="bottom" constant="8" id="EFX-tf-cZh"/>
+                            <constraint firstItem="5ZZ-wQ-bx3" firstAttribute="top" secondItem="pZM-q9-3uo" secondAttribute="bottom" constant="8" id="LnD-yS-bja"/>
+                            <constraint firstItem="pZM-q9-3uo" firstAttribute="top" secondItem="auk-1u-53z" secondAttribute="topMargin" constant="20" id="QLk-uc-iZo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HqB-Q0-kmc" secondAttribute="trailing" constant="20" id="TPh-gQ-1Ch"/>
+                            <constraint firstItem="HqB-Q0-kmc" firstAttribute="top" secondItem="5ZZ-wQ-bx3" secondAttribute="bottom" constant="8" id="Wa8-TM-vyH"/>
+                            <constraint firstItem="gdX-M6-hgd" firstAttribute="trailing" secondItem="auk-1u-53z" secondAttribute="trailingMargin" constant="20" id="mOh-W5-o3A"/>
+                            <constraint firstItem="pZM-q9-3uo" firstAttribute="top" secondItem="Kid-yR-ZV4" secondAttribute="bottom" constant="8" id="mgO-b5-b7K"/>
+                            <constraint firstItem="pZM-q9-3uo" firstAttribute="leading" secondItem="auk-1u-53z" secondAttribute="leadingMargin" constant="4" id="sKy-Zq-TTa"/>
+                            <constraint firstItem="5ZZ-wQ-bx3" firstAttribute="leading" secondItem="auk-1u-53z" secondAttribute="leadingMargin" constant="20" id="vAW-gz-0ib"/>
+                            <constraint firstItem="gdX-M6-hgd" firstAttribute="leading" secondItem="pZM-q9-3uo" secondAttribute="trailing" constant="8" id="w0V-KY-XrJ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="QLk-uc-iZo"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Tweet" id="lVu-Zy-N3n"/>
+                    <connections>
+                        <outlet property="tweetLocationMapView" destination="HqB-Q0-kmc" id="lux-Fb-gUa"/>
+                        <outlet property="tweetTextLabel" destination="5ZZ-wQ-bx3" id="ZhW-Ln-9Af"/>
+                        <outlet property="userImageButton" destination="pZM-q9-3uo" id="84T-ew-SiE"/>
+                        <outlet property="userRealNameLabel" destination="gdX-M6-hgd" id="CV4-SU-GZI"/>
+                        <outlet property="userScreenNameLabel" destination="Vzg-AJ-if1" id="hEo-Db-IuT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5X5-Fn-FHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
