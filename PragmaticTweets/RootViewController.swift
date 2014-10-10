@@ -121,5 +121,13 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
             println("handleTwitterData received no data.")
         }
     }
+
+    public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showTweetDetailsSegue" {
+            let row = self.tableView!.indexPathForSelectedRow()!.row
+            let parsedTweet = parsedTweets[row] as ParsedTweet
+            println("Tapped on \(parsedTweet.tweetText!)")
+        }
+    }
 }
 

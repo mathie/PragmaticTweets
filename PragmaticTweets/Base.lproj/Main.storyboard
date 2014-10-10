@@ -98,6 +98,7 @@
                                     <outlet property="createdAtLabel" destination="tM6-sD-GaM" id="s0S-SK-TGi"/>
                                     <outlet property="tweetTextLabel" destination="k00-Hk-omy" id="XEL-7Q-PWt"/>
                                     <outlet property="userNameLabel" destination="jyz-rv-4Pg" id="TdW-GM-8Rm"/>
+                                    <segue destination="hDj-XP-hik" kind="show" identifier="showTweetDetailsSegue" id="hCw-T5-Uzd"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -117,6 +118,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LrO-Dd-wV7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1865" y="399"/>
+        </scene>
+        <!--Tweet-->
+        <scene sceneID="CWL-An-R84">
+            <objects>
+                <viewController id="hDj-XP-hik" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kid-yR-ZV4"/>
+                        <viewControllerLayoutGuide type="bottom" id="sgb-uz-ME3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="auk-1u-53z">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tweet" id="lVu-Zy-N3n"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5X5-Fn-FHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2575" y="393"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SIu-E0-UNN">
