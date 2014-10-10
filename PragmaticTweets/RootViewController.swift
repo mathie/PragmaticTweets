@@ -76,11 +76,7 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
     }
 
     @IBAction func handleRefresh(sender : AnyObject?) {
-        self.parsedTweets.append(
-            ParsedTweet(tweetText: "New row", userName: "@refresh", createdAt: NSDate().description, userAvatarURL: defaultAvatarURL)
-        )
         reloadTweets()
-        refreshControl!.endRefreshing()
     }
     
     func reloadTweets() {
@@ -116,6 +112,9 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
                 dispatch_async(dispatch_get_main_queue(), {
                     () -> Void in
                     self.tableView.reloadData()
+                    if let refreshControl = self.refreshControl {
+                        refreshControl.endRefreshing()
+                    }
                 })
             }
         } else {
