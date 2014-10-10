@@ -122,7 +122,7 @@
         <!--Tweet-->
         <scene sceneID="CWL-An-R84">
             <objects>
-                <viewController id="hDj-XP-hik" sceneMemberID="viewController">
+                <viewController id="hDj-XP-hik" customClass="TweetDetailViewController" customModule="PragmaticTweets" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kid-yR-ZV4"/>
                         <viewControllerLayoutGuide type="bottom" id="sgb-uz-ME3"/>

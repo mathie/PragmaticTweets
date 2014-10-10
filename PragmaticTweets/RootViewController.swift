@@ -15,9 +15,9 @@ let defaultAvatarURL = NSURL(string: "https://abs.twimg.com/sticky/default_profi
 public class RootViewController: UITableViewController, TwitterAPIRequestDelegate {
 
     var parsedTweets : Array <ParsedTweet> = [
-        ParsedTweet(tweetText: "iOS SDK Development now in print. Swifth programming FTW!", userName: "@pragprog", createdAt: "2014-08-20 16:44:30 EDT", userAvatarURL: defaultAvatarURL),
-        ParsedTweet(tweetText: "Math is cool", userName: "@redqueencoder", createdAt: "2014-08-16 16:44:30 EDT", userAvatarURL: defaultAvatarURL),
-        ParsedTweet(tweetText: "Anime is cool", userName: "@invalidname", createdAt: "2014-07-31 16:44:30 EDT", userAvatarURL: defaultAvatarURL)
+        ParsedTweet(tweetIdString: "1", tweetText: "iOS SDK Development now in print. Swifth programming FTW!", userName: "@pragprog", createdAt: "2014-08-20 16:44:30 EDT", userAvatarURL: defaultAvatarURL),
+        ParsedTweet(tweetIdString: "2", tweetText: "Math is cool", userName: "@redqueencoder", createdAt: "2014-08-16 16:44:30 EDT", userAvatarURL: defaultAvatarURL),
+        ParsedTweet(tweetIdString: "3", tweetText: "Anime is cool", userName: "@invalidname", createdAt: "2014-07-31 16:44:30 EDT", userAvatarURL: defaultAvatarURL)
     ]
 
     public override func viewDidLoad() {
@@ -99,6 +99,7 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
 
                 for tweetDict in jsonArray {
                     let parsedTweet = ParsedTweet()
+                    parsedTweet.tweetIdString = tweetDict["id_str"] as String?
                     parsedTweet.tweetText = tweetDict["text"] as String?
                     parsedTweet.createdAt = tweetDict["created_at"] as String?
                     
@@ -124,9 +125,11 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
 
     public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showTweetDetailsSegue" {
-            let row = self.tableView!.indexPathForSelectedRow()!.row
-            let parsedTweet = parsedTweets[row] as ParsedTweet
-            println("Tapped on \(parsedTweet.tweetText!)")
+            if let tweetDetailViewController = segue.destinationViewController as? TweetDetailViewController {
+                let row = self.tableView!.indexPathForSelectedRow()!.row
+                let parsedTweet = parsedTweets[row] as ParsedTweet
+                tweetDetailViewController.tweetIdString = parsedTweet.tweetIdString
+            }
         }
     }
 }

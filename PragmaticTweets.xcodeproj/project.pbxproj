@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B0659A119E8167C004CEE84 /* TweetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0659A019E8167C004CEE84 /* TweetDetailViewController.swift */; };
 		4BC63CFB19E0098D00BC31F0 /* ParsedTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC63CFA19E0098D00BC31F0 /* ParsedTweet.swift */; };
 		4BC63CFD19E0124400BC31F0 /* ParsedTweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC63CFC19E0124400BC31F0 /* ParsedTweetCell.swift */; };
 		4BC63D0119E4415D00BC31F0 /* TwitterAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC63D0019E4415D00BC31F0 /* TwitterAPIRequest.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B0659A019E8167C004CEE84 /* TweetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailViewController.swift; sourceTree = "<group>"; };
 		4BC63CFA19E0098D00BC31F0 /* ParsedTweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedTweet.swift; sourceTree = "<group>"; };
 		4BC63CFC19E0124400BC31F0 /* ParsedTweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedTweetCell.swift; sourceTree = "<group>"; };
 		4BC63D0019E4415D00BC31F0 /* TwitterAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterAPIRequest.swift; sourceTree = "<group>"; };
@@ -71,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B06599F19E81640004CEE84 /* Tweet Detail View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4B0659A019E8167C004CEE84 /* TweetDetailViewController.swift */,
+			);
+			name = "Tweet Detail View Controller";
+			sourceTree = "<group>";
+		};
 		4BC63CFE19E43FCF00BC31F0 /* Root View Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +121,7 @@
 		4BE23BD519D3096B00FE88C9 /* PragmaticTweets */ = {
 			isa = PBXGroup;
 			children = (
+				4B06599F19E81640004CEE84 /* Tweet Detail View Controller */,
 				4BE23BD819D3096B00FE88C9 /* AppDelegate.swift */,
 				4BC63CFE19E43FCF00BC31F0 /* Root View Controller */,
 				4BC63CFF19E4400D00BC31F0 /* Twitter */,
@@ -256,6 +267,7 @@
 				4BC63CFB19E0098D00BC31F0 /* ParsedTweet.swift in Sources */,
 				4BE23BDB19D3096B00FE88C9 /* RootViewController.swift in Sources */,
 				4BC63D0119E4415D00BC31F0 /* TwitterAPIRequest.swift in Sources */,
+				4B0659A119E8167C004CEE84 /* TweetDetailViewController.swift in Sources */,
 				4BE23BD919D3096B00FE88C9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
