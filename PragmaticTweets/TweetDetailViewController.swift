@@ -93,4 +93,12 @@ class TweetDetailViewController: UIViewController, TwitterAPIRequestDelegate {
             }
         }
     }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showUserDetailsSegue" {
+            if let userDetailViewController = segue.destinationViewController as? UserDetailViewController {
+                userDetailViewController.screenName = self.userScreenNameLabel.text
+            }
+        }
+    }
 }
