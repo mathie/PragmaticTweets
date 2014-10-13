@@ -44,12 +44,26 @@ class TwitterAPIRequest: NSObject {
                     request.account = twitterAccounts[0] as ACAccount
                     request.performRequestWithHandler({
                         (NSData data, NSHTTPURLResponse urlResponse, NSError error) -> Void in
-                        if let delegate = self.delegate {
-                            delegate.handleTwitterData(data, urlResponse: urlResponse, error: error, fromRequest: self)
-                        }
+                        
+                        self.handleTwitterData(data, urlResponse: urlResponse, error: error)
                     })
                 }
             }
         })
+    }
+
+    func handleTwitterData(data: NSData!, urlResponse: NSHTTPURLResponse!, error: NSError!) {
+        if let validData = data {
+            var parseError : NSError? = nil
+            let jsonObject : AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0), error: &parseError)
+            if let errorValue = parseError {
+                println("JSON parsing failed: \(errorValue).")
+                return
+            }
+            
+            if let delegate = self.delegate {
+                delegate.handleTwitterJSONResponse(jsonObject, fromRequest: self)
+            }
+        }
     }
 }
