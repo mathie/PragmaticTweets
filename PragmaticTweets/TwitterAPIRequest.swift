@@ -15,16 +15,16 @@ class TwitterAPIRequest: NSObject {
     var params: Dictionary<String, String>!
     var delegate: TwitterAPIRequestDelegate?
 
-    init(requestURL: NSURL!, params: Dictionary<String, String>, delegate: TwitterAPIRequestDelegate?) {
+    init(requestURLFragment: String, params: Dictionary<String, String>, delegate: TwitterAPIRequestDelegate?) {
         super.init()
         
-        self.url = requestURL
+        self.url = NSURL(string: "https://api.twitter.com/1.1/\(requestURLFragment).json")
         self.params = params
         self.delegate = delegate
     }
 
-    convenience init(requestURL: NSURL!, delegate: TwitterAPIRequestDelegate?) {
-        self.init(requestURL: requestURL, params: [ : ], delegate: delegate)
+    convenience init(requestURLFragment: String, delegate: TwitterAPIRequestDelegate?) {
+        self.init(requestURLFragment: requestURLFragment, params: [ : ], delegate: delegate)
     }
 
     func sendTwitterRequest() {

@@ -28,11 +28,11 @@ class UserDetailViewController: UIViewController, TwitterAPIRequestDelegate {
         if screenName == nil {
             return
         }
-        let twitterParams = [
-            "screen_name": screenName!
-        ]
-        let twitterAPIURL = NSURL(string: "https://api.twitter.com/1.1/users/show.json")
-        let twitterRequest = TwitterAPIRequest(requestURL: twitterAPIURL, params: twitterParams, delegate: self)
+
+        let twitterRequest = TwitterAPIRequest(
+            requestURLFragment: "users/show",
+            params: [ "screen_name": screenName! ],
+            delegate: self)
         twitterRequest.sendTwitterRequest()
     }
 

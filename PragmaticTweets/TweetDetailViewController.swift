@@ -29,16 +29,15 @@ class TweetDetailViewController: UIViewController, TwitterAPIRequestDelegate {
     }
 
     func reloadTweetDetails() {
-        println("Reloading tweet id: \(tweetIdString)")
-
         if tweetIdString == nil {
             return
         }
-        let twitterParams = [
-            "id": tweetIdString!
-        ]
-        let twitterAPIURL = NSURL(string: "https://api.twitter.com/1.1/statuses/show.json")
-        let twitterRequest = TwitterAPIRequest(requestURL: twitterAPIURL, params: twitterParams, delegate: self)
+
+        let twitterRequest = TwitterAPIRequest(
+            requestURLFragment: "statuses/show",
+            params: [ "id": tweetIdString! ],
+            delegate: self
+        )
         twitterRequest.sendTwitterRequest()
     }
     
