@@ -11,7 +11,23 @@ import Social
 import Accounts
 
 class TwitterAPIRequest: NSObject {
-    func sendTwitterRequest(requestURL: NSURL!, params: Dictionary<String, String>, delegate: TwitterAPIRequestDelegate?) {
+    var url: NSURL!
+    var params: Dictionary<String, String>!
+    var delegate: TwitterAPIRequestDelegate?
+
+    init(requestURL: NSURL!, params: Dictionary<String, String>, delegate: TwitterAPIRequestDelegate?) {
+        super.init()
+        
+        self.url = requestURL
+        self.params = params
+        self.delegate = delegate
+    }
+
+    convenience init(requestURL: NSURL!, delegate: TwitterAPIRequestDelegate?) {
+        self.init(requestURL: requestURL, params: [ : ], delegate: delegate)
+    }
+
+    func sendTwitterRequest() {
         let accountStore = ACAccountStore()
         let twitterAccountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
         
@@ -24,12 +40,12 @@ class TwitterAPIRequest: NSObject {
                 if twitterAccounts.count == 0 {
                     println("No twitter accounts configured")
                 } else {
-                    let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: requestURL, parameters: params)
+                    let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: self.url, parameters: self.params)
                     request.account = twitterAccounts[0] as ACAccount
                     request.performRequestWithHandler({
                         (NSData data, NSHTTPURLResponse urlResponse, NSError error) -> Void in
-                        if delegate != nil {
-                            delegate!.handleTwitterData(data, urlResponse: urlResponse, error: error, fromRequest: self)
+                        if let delegate = self.delegate {
+                            delegate.handleTwitterData(data, urlResponse: urlResponse, error: error, fromRequest: self)
                         }
                     })
                 }

@@ -34,12 +34,12 @@ class TweetDetailViewController: UIViewController, TwitterAPIRequestDelegate {
         if tweetIdString == nil {
             return
         }
-        let twitterRequest = TwitterAPIRequest()
         let twitterParams = [
             "id": tweetIdString!
         ]
         let twitterAPIURL = NSURL(string: "https://api.twitter.com/1.1/statuses/show.json")
-        twitterRequest.sendTwitterRequest(twitterAPIURL, params: twitterParams, delegate: self)
+        let twitterRequest = TwitterAPIRequest(requestURL: twitterAPIURL, params: twitterParams, delegate: self)
+        twitterRequest.sendTwitterRequest()
     }
     
     func handleTwitterData(data: NSData!, urlResponse: NSHTTPURLResponse!, error: NSError!, fromRequest: TwitterAPIRequest!) {

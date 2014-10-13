@@ -90,8 +90,8 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
         ]
         let twitterAPIURL = NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
         
-        let request = TwitterAPIRequest()
-        request.sendTwitterRequest(twitterAPIURL, params: twitterParams, delegate: self)
+        let request = TwitterAPIRequest(requestURL: twitterAPIURL, params: twitterParams, delegate: self)
+        request.sendTwitterRequest()
     }
 
     func handleTwitterData(data: NSData!, urlResponse: NSHTTPURLResponse!, error: NSError!, fromRequest: TwitterAPIRequest!) {
