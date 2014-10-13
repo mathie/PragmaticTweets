@@ -64,6 +64,5 @@ class UserDetailViewController: UIViewController, TwitterAPIRequestDelegate {
     }
     
     @IBAction func unwindToTweetDetailViewController(segue: UIStoryboardSegue?) {
-        println("unwind called!")
     }
 }
