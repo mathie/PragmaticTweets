@@ -41,9 +41,9 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
         let cell = tableView.dequeueReusableCellWithIdentifier("CustomTweetCell") as ParsedTweetCell
         let parsedTweet = parsedTweets[indexPath.row]
 
-        cell.userNameLabel!.text = parsedTweet.userName
-        cell.tweetTextLabel!.text = parsedTweet.tweetText
-        cell.createdAtLabel!.text = parsedTweet.createdAt
+        cell.userNameLabel.text = parsedTweet.userName
+        cell.tweetTextLabel.text = parsedTweet.tweetText
+        cell.createdAtLabel.text = parsedTweet.createdAt
         
         if let userAvatarURL = parsedTweet.userAvatarURL {
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
@@ -55,7 +55,7 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
                     dispatch_async(dispatch_get_main_queue(), {
                         () -> Void in
                         if cell.userNameLabel.text == parsedTweet.userName {
-                            cell.avatarImageView!.image = avatarImage!
+                            cell.avatarImageView.image = avatarImage
                         } else {
                             println("Warning: avatar isn't for this username.")
                         }
