@@ -48,16 +48,21 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
         if let userAvatarURL = parsedTweet.userAvatarURL {
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
                 () -> Void in
-                let avatarImage = UIImage(data: NSData(contentsOfURL: userAvatarURL)!)
-                
-                dispatch_async(dispatch_get_main_queue(), {
-                    () -> Void in
-                    if cell.userNameLabel.text == parsedTweet.userName {
-                        cell.avatarImageView!.image = avatarImage!
-                    } else {
-                        println("Warning: avatar isn't for this username.")
-                    }
-                })
+
+                if let avatarImageData = NSData(contentsOfURL: userAvatarURL) {
+                    let avatarImage = UIImage(data: avatarImageData)
+
+                    dispatch_async(dispatch_get_main_queue(), {
+                        () -> Void in
+                        if cell.userNameLabel.text == parsedTweet.userName {
+                            cell.avatarImageView!.image = avatarImage!
+                        } else {
+                            println("Warning: avatar isn't for this username.")
+                        }
+                    })
+                } else {
+                    println("Warning: can't load avatar image")
+                }
             })
         }
         
