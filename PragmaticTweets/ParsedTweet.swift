@@ -19,12 +19,12 @@ class ParsedTweet: NSObject {
         super.init()
     }
 
-    init(tweetIdString: String?,
+    convenience init(tweetIdString: String?,
         tweetText: String?,
         userName: String?,
         createdAt: String?,
         userAvatarURL: NSURL?) {
-            super.init()
+            self.init()
 
             self.tweetIdString = tweetIdString
             self.tweetText = tweetText
