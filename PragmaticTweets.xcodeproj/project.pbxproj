@@ -21,6 +21,7 @@
 		4BE23BEF19D3096B00FE88C9 /* PragmaticTweetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE23BEE19D3096B00FE88C9 /* PragmaticTweetsTests.swift */; };
 		4BE23BFC19D3259200FE88C9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BE23BFE19D3259200FE88C9 /* Localizable.strings */; };
 		4BE23C0119D3480F00FE88C9 /* WebViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE23C0019D3480F00FE88C9 /* WebViewTests.swift */; };
+		4BF29C5319EFBDFE00143A00 /* SizeClasOverridingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF29C5219EFBDFE00143A00 /* SizeClasOverridingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		4BE23BFD19D3259200FE88C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4BE23BFF19D3259800FE88C9 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4BE23C0019D3480F00FE88C9 /* WebViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewTests.swift; sourceTree = "<group>"; };
+		4BF29C5219EFBDFE00143A00 /* SizeClasOverridingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeClasOverridingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 		4BE23BD519D3096B00FE88C9 /* PragmaticTweets */ = {
 			isa = PBXGroup;
 			children = (
+				4BF29C5119EFBDD400143A00 /* Size Class Override */,
 				4BC63CFE19E43FCF00BC31F0 /* Root View Controller */,
 				4B06599F19E81640004CEE84 /* Tweet Detail View Controller */,
 				4B0659A219E82B6B004CEE84 /* User Detail View Controller */,
@@ -169,6 +172,14 @@
 				4BE23BED19D3096B00FE88C9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4BF29C5119EFBDD400143A00 /* Size Class Override */ = {
+			isa = PBXGroup;
+			children = (
+				4BF29C5219EFBDFE00143A00 /* SizeClasOverridingViewController.swift */,
+			);
+			name = "Size Class Override";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +292,7 @@
 				4BC63D0119E4415D00BC31F0 /* TwitterAPIRequest.swift in Sources */,
 				4B0659A119E8167C004CEE84 /* TweetDetailViewController.swift in Sources */,
 				4BE23BD919D3096B00FE88C9 /* AppDelegate.swift in Sources */,
+				4BF29C5319EFBDFE00143A00 /* SizeClasOverridingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
