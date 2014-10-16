@@ -21,6 +21,7 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
     ]
 
     public override func viewDidLoad() {
+        println("rootViewController:viewDidLoad")
         super.viewDidLoad()
         reloadTweets()
         
